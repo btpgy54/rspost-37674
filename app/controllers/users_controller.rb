@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def new
+    @user = User.new(user_params)
+  end
+
   def edit
   end
 
@@ -9,6 +13,11 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    reset_session
+    redirect_to :index
   end
 
   private
