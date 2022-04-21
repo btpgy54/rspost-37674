@@ -31,14 +31,16 @@
   width: 100%;
   height: 5vh;
   padding-left: 10px;
+  border-radius:30px;
 }
 
 .search-button {
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: #3c5ece;
   padding: 8px;
+  border-radius:30px;
 }
 
 .search-icon {

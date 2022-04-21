@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.items_name %>
+    </h2>
+    <div class="posted-content">
+      <%= image_tag @post.images[0], class: "main-image" %><br>
+  <div class="other-images">
+    <% @post.images[1..-1].each do |image| %>
+      <div class="other-image">
+        <%= image_tag image %>
+      </div>
+    <%end%>
+  </div>
+    </div>
+
+      <%# if user_signed_in? && current_user.id == @item.user_id && @item.order == nil %>
+          <%= link_to "画像の編集", "#", method: :get, class: "item-red-btn" %>
+          <p class="or-text">or</p>
+          <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+      <%# else %>
+        <%# if user_signed_in? && @item.order == nil %>
+          <%= link_to "予約画面に進む", "#", class:"item-red-btn" %>
+        <%# end %>
+      <%# end %>
+      
+    <div class="post-explain-box">
+      <span><%= "画像の説明" %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-post">タイトル</th>
+          <td class="detail-value"><%= "タイトル" %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">画像の説明</th>
+          <td class="detail-value"><%= "画像の説明" %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">日時</th>
+          <td class="detail-value"><%= "日時" %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">クラブ名</th>
+          <td class="detail-value"><%= "クラブ名" %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">投稿者名</th>
+          <td class="detail-value"><%= "投稿者名" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+
+  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+</div>
+
+<%= render "shared/footer" %>

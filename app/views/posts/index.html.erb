@@ -1,0 +1,14 @@
+<h1>投稿一覧</h1>
+<%= link_to "投稿する", new_post_path, class:"post" %>
+  <div class="post">
+    <div class="post-club">
+      <%= post.club.name %>
+    </div>
+    <div class="post-title">
+      <%= post.title %>
+    </div>
+    <div class="post-text">
+      <%= post.text %>
+    </div>
+  </div>
+<% end %>

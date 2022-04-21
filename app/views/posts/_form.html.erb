@@ -1,0 +1,79 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">画像の情報を入力</h2>
+    <%= form_with model: @post, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        資料画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, id:"item-image", 'post[images][]', data: {index: 0} %>
+      </div>
+    </div>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          画像の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"posts-text", id:"post-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="posts-detail">
+      <div class="weight-bold-text">画像の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          日時
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :date, class:"date-input", id:"date", placeholder:"例）20001010" %>
+        <div class="weight-bold-text">
+          クラブ名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:club_id, Club.all, :id, :name, {}, {class:"select-box", id:"post-club"}) %>
+        <div class="weight-bold-text">
+          ユーザー名
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.collection_select(:user_id, User.all, :id, :name, {}, {class:"select-box", id:"post-user"}) %>
+      </div>
+    </div>
+
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する", class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <p class="inc">
+      ©︎Furima,Inc.
+    </p>
+  </footer>
+</div>
