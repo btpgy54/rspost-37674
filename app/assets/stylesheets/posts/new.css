@@ -1,7 +1,7 @@
 /* border-bottom: 1px solid #eee; */
 
 
-.items-sell-contents {
+.posts-contents {
   background-color: #f5f5f5;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
@@ -11,19 +11,14 @@
   min-width: 500px;
 }
 
-.items-sell-header {
-  padding: 5vh 0;
-  text-align: center;
-}
-
-.items-sell-main {
+.posts-main {
   background-color: #FFF;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
 }
 
-.items-sell-title {
+.posts-title {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
@@ -51,19 +46,6 @@
   width: 100%;
   background-color: #f5f5f5;
   padding-left: 20px;
-}
-
-.question {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: #0099e8;
-  color: #FFF;
-  font-size: 13px;
-  text-align: center;
-  line-height: 20px;
-  text-decoration: none;
-  margin-left: 5px;
 }
 
 .question-text {
@@ -96,7 +78,7 @@
   padding: 2vh 0;
 }
 
-.items-text {
+.posts-text {
   width: 100%;
   padding: 16px 16px 8px;
   border-radius: 4px;
@@ -118,7 +100,7 @@
   padding: 2vh 0;
 }
 
-.items-detail>.form {
+.posts-detail>.form {
   width: 300px;
   padding: 2vh 0;
 }
@@ -151,11 +133,7 @@
   align-items: center;
 }
 
-.sell-yen {
-  font-size: 18px;
-}
-
-.price-input {
+.date-input {
   height: 30px;
   text-align: right;
   padding-right: 10px;
@@ -181,14 +159,15 @@
   text-align: center;
 }
 
-.sell-btn {
-  background: #ea352d;
-  border: 1px solid #ea352d;
+.post-btn {
+  background: #2c85c0;
+  border: 1px solid #2c85c0;
   color: #fff;
   width: 100%;
   height: 50px;
   font-size: 14px;
   margin-bottom: 4vh;
+  border-radius:30px;
 }
 
 .back-btn {
@@ -197,6 +176,7 @@
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
+  border-radius:30px;
 }
 
 /* /下部ボタン */

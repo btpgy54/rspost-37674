@@ -37,6 +37,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_hash (3.1.0)
+      activesupport (>= 5.0.0)
     activejob (6.0.4.7)
       activesupport (= 6.0.4.7)
       globalid (>= 0.3.6)
@@ -58,11 +60,8 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-
-    bcrypt (3.1.17)
-
     ast (2.4.2)
-
+    bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -121,18 +120,15 @@ GEM
     nokogiri (1.13.4)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-
     orm_adapter (0.5.0)
+    parallel (1.22.1)
+    parser (3.1.2.0)
+      ast (~> 2.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-
-    parallel (1.22.1)
-    parser (3.1.2.0)
-      ast (~> 2.4.1)
-
     public_suffix (4.0.7)
     puma (3.12.6)
     racc (1.6.0)
@@ -177,10 +173,6 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-
-    ruby-vips (2.1.4)
-      ffi (~> 1.12)
-
     rubocop (1.27.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -193,7 +185,8 @@ GEM
     rubocop-ast (1.17.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
-
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sass (3.7.4)
@@ -230,12 +223,9 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-
+    unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-
-    unicode-display_width (2.1.0)
-
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -260,6 +250,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

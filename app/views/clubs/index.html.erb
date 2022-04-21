@@ -2,35 +2,23 @@
 <div class='main'>
 
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>クラブ/講座一覧</h2>
     <div class="subtitle" >
-      新規投稿商品
+      クラブ/講座
     </div>
     <ul class='item-lists'>
 
-      <% if @items.present? %>
-        <% @items.each do |item| %>
+      <% if @images.present? %>
+        <% @clubs.each do |image| %>
           <li class='list'>
             <%= link_to item_path(item) do %>
-              <div class='item-img-content'>
-                <%= image_tag item.image, class: "item-img" %>
-                  <% if item.order.present? %>
-                    <div class='sold-out'>
-                      <span>Sold Out!!</span>
-                    </div>
-                  <% end %>
+              <div class='club-img-content'>
+                <%= image_tag club.image, class: "club-img" %>
               </div>
-              <div class='item-info'>
-                <h3 class='item-name'>
-                  <%= item.items_name %>
+              <div class='club-info'>
+                <h3 class='club-name'>
+                  <%= club.club_name %>
                 </h3>
-                <div class='item-price'>
-                  <span><%= item.price %>円<br><%= item.shipping_fee.name %></span>
-                  <div class='star-btn'>
-                    <%#= image_tag "star.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
-                  </div>
-                </div>
               </div>
             <% end %>
           </li>
@@ -39,16 +27,12 @@
         <li class='list'>
           <%= link_to "#" do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-          <div class='item-info'>
-            <h3 class='item-name'>
-              商品を出品してね！
+          <div class='club-info'>
+            <h3 class='club-image'>
+              画像を投稿してね！
             </h3>
-            <div class='item-price'>
-              <span>99999999円<br>(税込み)</span>
-              <div class='star-btn'>
-                <%#= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
-              </div>
+            <div class='club-name'>
+              <span>クラブ名<br></span>
             </div>
           </div>
           <% end %>

@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   
@@ -10,7 +9,6 @@ class ApplicationController < ActionController::Base
       :sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana]
     )
   end
-end
 
   before_action :basic_auth
 
