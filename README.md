@@ -1,24 +1,86 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+has_one :contact
+has_many :clubs
+has_many :posts
 
-* Configuration
+## contacts テーブル
 
-* Database creation
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| city               | string     | null: false                    |
+| street_number      | string     | null: false                    |
+| building           | string     | null: false                    |
+| phone_number       | string     | null: false                    |
+| user               | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## clubs テーブル
 
-* Deployment instructions
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| club_name        | string     | null: false                    |
+| club_description | text       | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- has_many :users
+
+## posts テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| date        | date       | null: false                    |
+| title       | string     | null: false                    |
+| description | text       | null: false                    |
+| club        | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- has_one :club
+- belongs_to :user
+
+## rooms テーブル
+
+| Column    | Type         | Options                      |
+| --------- | ---------- | ------------------------------ |
+| room_id   | integer    | null: false                    |
+| club      | references | null: false, foreign_key: true |
+
+### Association
+
+- has_one : club
+
+## reserves テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| reserved_date | date       | null: false                    |
+| room          | references | null: false, foreign_key: true |
+| club          | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :club
+- has_one :room
