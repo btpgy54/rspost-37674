@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: [:edit, :update, :show]
 
   def index
     @posts = Post.order("created_at DESC")
@@ -14,16 +15,31 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render :new
+      render :index
     end
-   end
-
-  #private
-  def post_params
-    params.require(:post).permit(:text, {images: []}, :club_id)
   end
 
-  #def set_post
-    #@post = Post.find(params[:id])
-  #end
+  def edit
+    unless current_user.id == @post.user_id && @post = nil
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :index
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit({images: []}, :title, :description, :date, :club_id).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end

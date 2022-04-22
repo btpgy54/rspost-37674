@@ -1,28 +1,29 @@
 <%= render "shared/header" %>
 
-<div class="item-show">
-  <div class="item-box">
-    <h2 class="name">
-      <%= @item.items_name %>
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="title">
+      <%= @post.title %>
     </h2>
     <div class="posted-content">
       <%= image_tag @post.images[0], class: "main-image" %><br>
   <div class="other-images">
-    <% @post.images[1..-1].each do |image| %>
+    <%# @post.images[1..-1].each do |image| %>
       <div class="other-image">
         <%= image_tag image %>
       </div>
-    <%end%>
+    <%#end%>
   </div>
     </div>
 
       <%# if user_signed_in? && current_user.id == @item.user_id && @item.order == nil %>
-          <%= link_to "画像の編集", "#", method: :get, class: "item-red-btn" %>
+          <%= link_to '詳細', post_path(post.id), method: :get %>
+          <%= link_to "画像の編集", "#", method: :get, class: "post-btn" %>
           <p class="or-text">or</p>
-          <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+          <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
       <%# else %>
         <%# if user_signed_in? && @item.order == nil %>
-          <%= link_to "予約画面に進む", "#", class:"item-red-btn" %>
+          <%= link_to "投稿画面に進む", "#", class:"post-btn" %>
         <%# end %>
       <%# end %>
       
@@ -56,15 +57,15 @@
   </div>
 
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
+    <a href="#" class="change-post-btn">
+      ＜ 前の画像
     </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
+    <a href="#" class="change-post-btn">
+      後ろの画像 ＞
     </a>
   </div>
 
-  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+  <a href="#" class="another-post"><%= @post.title %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
