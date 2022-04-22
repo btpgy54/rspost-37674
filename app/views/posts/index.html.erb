@@ -2,13 +2,12 @@
 <%= link_to "投稿する", new_post_path, class:"post" %>
   <div class="post">
     <div class="post-club">
-      <%= post.club.name %>
+      <%= @post.club.name %>
     </div>
     <div class="post-title">
-      <%= post.title %>
+      <%= @post.title %>
     </div>
     <div class="post-text">
-      <%= post.text %>
+      <%= @post.description %>
     </div>
   </div>
-<% end %>

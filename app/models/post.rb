@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :images, presence: true
   validates :date, presence: true
   validates :title, presence: true
-  validate :description
+  validates :description, presence: true
   validates :club_id, numericality: { other_than: 1, message: "can't be blank" }
+  validate :user_id
 end
