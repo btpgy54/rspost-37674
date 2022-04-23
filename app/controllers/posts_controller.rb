@@ -33,13 +33,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find_by(id:params[:id])
+  end
+
   private
 
   def post_params
-    params.require(:post).permit({images: []}, :title, :description, :date, :club_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:image_id, :title, :description, :date, :club_id).merge(user_id: current_user.id)
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id:params[:id])
   end
 end

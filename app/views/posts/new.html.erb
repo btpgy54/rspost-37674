@@ -1,13 +1,12 @@
-<div class="images-post-contents">
-  <header class="images-post-header">
+<div class="posts-contents">
+  <header class="posts-header">
     <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-
-  </header>
-  <div class="images-post-main">
-    <h2 class="images-post-title">画像の情報を入力</h2>
+  <header>
+  <div class="posts-main">
+    <h2 class="posts-title">画像の情報を入力</h2>
     <%= form_with model: @post, local: true do |f| %>
 
-    <%#= render 'shared/error_messages', model: f.object %>
+    <%#= render 'shared/error/messages', model: f.object %>
 
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -16,24 +15,24 @@
       </div>
       <div class="click-upload">
         <p>
-          クリックしてファイルをアップロード
+           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"image" %>
+        <%= f.file_field :image, id:"post-image" %>
       </div>
     </div>
 
-    <div class="new-items">
+    <div class="new-posts">
       <div class="weight-bold-text">
         タイトル
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"posts-text", id:"post-title", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
+      <div class="posts-explain">
         <div class="weight-bold-text">
           画像の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :description, class:"posts-text", id:"post-info", placeholder:"投稿画像の説明（必須 1,000文字まで）（資料など）例）講座で使用した資料です。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :description, class:"posts-text", id:"post-info", placeholder:"画像の説明（必須 1,000文字まで）（資料画像など）例）講座で使用した資料です。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
@@ -41,26 +40,20 @@
       <div class="weight-bold-text">画像の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          日時
+          日付
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :date, class:"date-input", id:"post-date", placeholder:"例）20001010" %>
+        <%= f.date_field :date, class:"posts-date", id:"post-date", placeholder:"20001010" %>
         <div class="weight-bold-text">
-          クラブ名
+          クラブ名/講座名
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:club_id, Club.all, :id, :name, {}, {class:"select-box", id:"club-select"}) %>
-        <div class="weight-bold-text">
-          投稿者名
-          <span class="indispensable">任意</span>
-        </div>
-        <%#= f.collection_select(:user_id, User.all, :id, :name, {}, {class:"select-box", id:"post-user"}) %>
+         <%= f.collection_select(:club_id, Club.all, :id, :name, {}, {class:"select-box", id:"post-club"}) %>
       </div>
     </div>
-
-    <div class="sell-btn-contents">
+    <div class="post-btn-contents">
       <%= f.submit "投稿する", class:"post-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
   </div>
   <% end %>
@@ -68,12 +61,11 @@
   <footer class="posts-footer">
     <ul class="menu">
       <li><%= link_to "HOME", root_path %></li>
-      <li><%= link_to "クラブ/講座", "#"%></li>
-      <li><%= link_to "予約", "#"%></li>
+      <li></li>
+      <li></li>
     </ul>
-    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
     <p class="inc">
-      ©︎〇〇町役場
+      ©︎町民センター
     </p>
   </footer>
 </div>

@@ -6,9 +6,31 @@ a {
   background: #f8f8f8;
 }
 
-/* 商品一覧 */
+.title-contents {
+  width: 100vw;
+  background-image: image-url('reservepostc-footer.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0vh 35vw;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
 
-.item-contents {
+.service-title {
+  font-size: 5vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.club-contents {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -16,13 +38,13 @@ a {
   padding: 10vh 0;
 }
 
-.item-contents>.title {
+.club-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
 }
 
-.item-contents>.subtitle {
+.club-contents>.subtitle {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
@@ -30,30 +52,29 @@ a {
   font-weight: bold;
 }
 
-.item-lists {
+.club-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
+.club-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
 }
 
-
-.item-img-content {
+.club-img-content {
   position: relative;
 }
 
-.item-img {
+.club-img {
   width: 33vh;
   height: 33vh;
 }
 
-.item-info {
+.club-info {
   background-color: #FFF;
   color: black;
   padding: 1vw;
@@ -62,5 +83,3 @@ a {
 .club-name {
   font-size: 2.5vh;
 }
-
-/* //クラブ一覧 */

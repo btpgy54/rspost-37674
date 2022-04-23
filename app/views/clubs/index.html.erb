@@ -1,17 +1,13 @@
 <%= render "shared/header" %>
 <div class='main'>
 
-  <div class='item-contents'>
+  <div class='club-contents'>
     <h2 class='title'>クラブ/講座一覧</h2>
-    <div class="subtitle" >
-      クラブ/講座
-    </div>
-    <ul class='item-lists'>
-
-      <% if @images.present? %>
-        <% @clubs.each do |image| %>
+    <ul class='club-lists'>
+      <% if @clubs.present? %>
+        <% @clubs.each do |club| %>
           <li class='list'>
-            <%= link_to item_path(item) do %>
+            <%= link_to club_path(club) do %>
               <div class='club-img-content'>
                 <%= image_tag club.image, class: "club-img" %>
               </div>
@@ -28,11 +24,8 @@
           <%= link_to "#" do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
           <div class='club-info'>
-            <h3 class='club-image'>
-              画像を投稿してね！
-            </h3>
             <div class='club-name'>
-              <span>クラブ名<br></span>
+              <span>クラブ名/講座名</span>
             </div>
           </div>
           <% end %>
@@ -41,8 +34,4 @@
     </ul>
   </div>
 </div>
-<%#= link_to(new_item_path, class: 'purchase-btn') do %>
-  <span class='post-btn-text'>投稿する</span>
-  <%#= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-<%# end %>
 <%= render "shared/footer" %>

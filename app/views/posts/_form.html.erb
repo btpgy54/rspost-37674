@@ -3,8 +3,8 @@
     <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
 
   </header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">画像の情報を入力</h2>
+  <div class="posts-main">
+    <h2 class="posts-title">画像の情報を入力</h2>
     <%= form_with model: @post, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>

@@ -3,27 +3,27 @@
 <div class="post-show">
   <div class="post-box">
     <h2 class="title">
-      <%= @post.title %>
+      <%#= @post.title %>
     </h2>
     <div class="posted-content">
-      <%= image_tag @post.images[0], class: "main-image" %><br>
+      <%#= image_tag @post.images, class: "main-image" %><br>
   <div class="other-images">
-    <%# @post.images[1..-1].each do |image| %>
+    <%# @post.images.each do |image| %>
       <div class="other-image">
-        <%= image_tag image %>
+        <%#= image_tag image %>
       </div>
     <%#end%>
   </div>
     </div>
 
       <%# if user_signed_in? && current_user.id == @item.user_id && @item.order == nil %>
-          <%= link_to '詳細', post_path(post.id), method: :get %>
+          <%#= link_to '詳細', post_path(post.id), method: :get %>
           <%= link_to "画像の編集", "#", method: :get, class: "post-btn" %>
           <p class="or-text">or</p>
           <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
       <%# else %>
         <%# if user_signed_in? && @item.order == nil %>
-          <%= link_to "投稿画面に進む", "#", class:"post-btn" %>
+          <%= link_to "投稿画面一覧に進む", "posts/show", method: :get, class:"post-btn" %>
         <%# end %>
       <%# end %>
       
@@ -34,23 +34,23 @@
       <tbody>
         <tr>
           <th class="detail-post">タイトル</th>
-          <td class="detail-value"><%= "タイトル" %></td>
+          <td class="detail-value"><%#= @post.title %></td>
         </tr>
         <tr>
           <th class="detail-post">画像の説明</th>
-          <td class="detail-value"><%= "画像の説明" %></td>
+          <td class="detail-value"><%#= @post.description %></td>
         </tr>
         <tr>
           <th class="detail-post">日時</th>
-          <td class="detail-value"><%= "日時" %></td>
+          <td class="detail-value"><%#= @post.date %></td>
         </tr>
         <tr>
-          <th class="detail-post">クラブ名</th>
-          <td class="detail-value"><%= "クラブ名" %></td>
+          <th class="detail-post">クラブ名/講座名</th>
+          <td class="detail-value"><%#= @post.club.name %></td>
         </tr>
         <tr>
           <th class="detail-post">投稿者名</th>
-          <td class="detail-value"><%= "投稿者名" %></td>
+          <td class="detail-value"><%#= current_user.nickname %></td>
         </tr>
       </tbody>
     </table>
@@ -65,7 +65,7 @@
     </a>
   </div>
 
-  <a href="#" class="another-post"><%= @post.title %>をもっと見る</a>
+  <%#a href="#" class="another-post"><%= @post.title %><%#をもっと見る</a>#%>
 </div>
 
 <%= render "shared/footer" %>

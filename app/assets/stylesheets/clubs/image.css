@@ -1,7 +1,8 @@
 img {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
+  overflow-x: scroll;
 }
 
 .other-images {

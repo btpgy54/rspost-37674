@@ -1,8 +1,20 @@
 <h1>投稿一覧</h1>
 <%= link_to "投稿する", new_post_path, class:"post" %>
   <div class="post">
-    <div class="post-club">
+    <div class="posted-content">
+      <%= image_tag @post.images, class: "main-image" %><br>
+  <div class="other-images">
+    <%# @post.images[1..-1].each do |image| %>
+      <div class="other-image">
+        <%#= image_tag image %>
+      </div>
+    <%#end%>
+  </div>
+     <div class="post-club">
       <%= @post.club.name %>
+    </div>
+    <div class="date">
+      <%= @post.date %>
     </div>
     <div class="post-title">
       <%= @post.title %>
@@ -10,4 +22,6 @@
     <div class="post-text">
       <%= @post.description %>
     </div>
+    
+    
   </div>
