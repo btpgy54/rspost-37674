@@ -3,7 +3,7 @@
 
 .ad-footer-contents {
   width: 100vw;
-  background-image: image-url('furima-footer.png');
+  background-image: image-url('rsfooter-footer.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -16,36 +16,34 @@
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-/* //下部部分 */
-
 .footer {
   width: 100vw;
-  padding: 5vh 0;
-  color: #FFF;
-  background-color: #277075;
-  text-align: center;
+  padding: 5vh;
+  color: black;
+  background-color: lightpink;
+  text-align: left;
 }
 
 .footer-contents {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5vh;
+  justify-content: end;
+  margin-bottom: 0vh;
 }
 
-.furima-details {
+.footer-details {
   margin: 0 4vw;
 }
 
 .footer-content-head {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .footer-link {
-  color: #FFF;
+  color: black;
   font-size: 15px;
-  line-height: 30px;
+  line-height: 10px;
 }
 
 .logo-white {
@@ -55,4 +53,5 @@
 
 .footer>p {
   font-size: 14px;
+  text-align: end;
 }
