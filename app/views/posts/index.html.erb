@@ -1,27 +1,28 @@
-<h1>投稿一覧</h1>
-<%= link_to "投稿する", new_post_path, class:"post" %>
-  <div class="post">
-    <div class="posted-content">
-      <%= image_tag @post.images, class: "main-image" %><br>
-  <div class="other-images">
-    <%# @post.images[1..-1].each do |image| %>
-      <div class="other-image">
-        <%#= image_tag image %>
-      </div>
-    <%#end%>
-  </div>
-     <div class="post-club">
-      <%= @post.club.name %>
+ <div class="post-explain-box">
+      <span><%= "画像の説明" %></span>
     </div>
-    <div class="date">
-      <%= @post.date %>
-    </div>
-    <div class="post-title">
-      <%= @post.title %>
-    </div>
-    <div class="post-text">
-      <%= @post.description %>
-    </div>
-    
-    
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-post">タイトル</th>
+          <td class="detail-value"><%= @post.title %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">画像の説明</th>
+          <td class="detail-value"><%= @post.description %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">日時</th>
+          <td class="detail-value"><%= @post.date %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">クラブ名/講座名</th>
+          <td class="detail-value"><%= @post.club.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">投稿者名</th>
+          <td class="detail-value"><%= current_user.nickname %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>

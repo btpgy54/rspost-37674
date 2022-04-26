@@ -16,15 +16,12 @@
   </div>
     </div>
 
-      <%# if user_signed_in? && current_user.id == @item.user_id && @item.order == nil %>
-          <%#= link_to '詳細', post_path(post.id), method: :get %>
+      <%# if user_signed_in? && current_user.id == @post.user_id %>
           <%= link_to "画像の編集", "#", method: :get, class: "post-btn" %>
           <p class="or-text">or</p>
           <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
       <%# else %>
-        <%# if user_signed_in? && @item.order == nil %>
-          <%= link_to "投稿画面一覧に進む", "posts/show", method: :get, class:"post-btn" %>
-        <%# end %>
+        
       <%# end %>
       
     <div class="post-explain-box">

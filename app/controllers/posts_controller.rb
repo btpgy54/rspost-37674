@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :show]
 
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.all.order("created_at DESC")
   end
 
   def new
@@ -15,13 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render :index
-    end
-  end
-
-  def edit
-    unless current_user.id == @post.user_id && @post = nil
-      redirect_to root_path
+      render :show
     end
   end
 
@@ -32,6 +26,12 @@ class PostsController < ApplicationController
       render :index
     end
   end
+
+  #def edit
+    #unless current_user.id == @post.user_id && @post = nil
+      #redirect_to root_path
+    #end
+  #end
 
   def show
     @post = Post.find_by(id:params[:id])
